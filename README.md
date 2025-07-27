@@ -16,17 +16,17 @@ What It Does
 How to Run
 Step 1: Install Dependencies
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-Step 2: Run the Flask Server
+# Step 2: Run the Flask Server
 Option A: With PyTorch model
 
-python app.py
+`python app.py`
 
 
-Step 3: Open in Browser
+# Step 3: Open in Browser
 
-Visit: http://127.0.0.1:5000
+`Visit: http://127.0.0.1:5000`
 
 Move your mouse around — if your movements are natural, you’ll be redirected to a human-only page (human.html)!
 Requirements Summary
