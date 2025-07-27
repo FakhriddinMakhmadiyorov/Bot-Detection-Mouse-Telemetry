@@ -1,37 +1,45 @@
 # Bot-Detection-Mouse-Telemetry
 
-A smart, scalable, and ultra-lightweight proof-of-concept that detects bots using only mouse telemetry and 4 simple math operations — no need for server-side deep learning.
+Faqat sichqoncha telemetriyasidan va 4 ta oddiy matematik amaldan foydalanadigan, aqlli, kengaytiriladigan va juda engil sinov loyihasi — server tomonidagi chuqur o‘rganishga ehtiyoj yo‘q.
 
-Project Overview
+Projekt haqida
 
-This system distinguishes between human and bot users based on their natural mouse movements. Unlike heavy ML models that run on the server, we perform most computations in the browser and only send 2 latent values to the backend.
-What It Does
+Ushbu tizim foydalanuvchilarning tabiiy sichqoncha harakatlariga asoslanib, inson va botlarni ajratib beradi. Serverda ishlaydigan og‘ir mashinani o‘rganish modellari o‘rniga, biz hisoblashlarning katta qismini brauzerda amalga oshiramiz va faqat 2 latent qiymatni backendga yuboramiz.
+U nima qiladi:
 
-    Tracks mouse telemetry (x, y, dt) in the browser.
-    Runs a compressed model in JavaScript using ONNX.
-    Sends latent vector [x1, x2] to Flask backend.
-    Backend uses 4 simple math operations to predict: human or bot.
-    Sets a cookie based on result — updates view accordingly.
+    Brauzerda sichqoncha telemetriyasini (x, y, dt) kuzatadi.
 
-How to Run
+    ONNX yordamida JavaScriptda siqilgan modelni ishga tushiradi.
+
+    Latent vektor [x1, x2] ni Flask backendga yuboradi.
+
+    Backend 4 ta oddiy matematik amal yordamida bashorat qiladi: inson yoki bot.
+
+    Natijaga qarab cookie o‘rnatadi va ko‘rinishni yangilaydi.
+
+Qanday dasturni ishlatish mumkin:
 Step 1: Install Dependencies
 
 `pip install -r requirements.txt`
 
-# Step 2: Run the Flask Server
+# Step 2: Flask serverni yurgizing
 Option A: With PyTorch model
 
 `python app.py`
 
 
-# Step 3: Open in Browser
+# Step 3: Browserda oching
 
 `Visit: http://127.0.0.1:5000`
 
-Move your mouse around — if your movements are natural, you’ll be redirected to a human-only page (human.html)!
-Requirements Summary
+Sichqonchangizni harakatlantiring — agar harakatlaringiz tabiiy bo‘lsa, siz insonlar uchun mo‘ljallangan sahifaga (human.html) yo‘naltirilasiz!
+
+Talablar umumiy ko‘rinishi
 
     Python ≥ 3.8
+
     Flask
-    For ML version: PyTorch
-    For analysis: Jupyter, pandas, matplotlib, torch, etc. (see requirements.txt)
+
+    Mashinani o‘rganish versiyasi uchun: PyTorch
+
+    Tahlil uchun: Jupyter, pandas, matplotlib, torch va boshqalar (batafsil requirements.txt faylida)
